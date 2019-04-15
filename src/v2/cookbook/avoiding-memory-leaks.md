@@ -1,16 +1,16 @@
 ---
-title: Avoiding Memory Leaks
+title: Αποφυγή διαρροών μνήμης (Memory Leaks)
 type: cookbook
 order: 10
 ---
 
-## Introduction
+## Εισαγωγή
 
-If you are developing applications with Vue, then you need to watch out for memory leaks. This issue is especially important in Single Page Applications (SPAs) because by design, users should not have to refresh their browser when using an SPA, so it is up to the JavaScript application to clean up components and make sure that garbage collection takes place as expected.
+Αν αναπτύσσετε εφαρμογές με την Vue, τότε πρέπει να προσέξετε τις διαρροές μνήμης. Αυτό το ζήτημα είναι ιδιαίτερα σημαντικό στις Εφαρμογές Μονής Σελίδας (SPAs), επειδή σκοπίμως, οι χρήστες δεν θα πρέπει να ανανεώνουν το πρόγραμμα περιήγησης τους κατά τη χρήση  μιας SPA, επομένως εξαρτάται από την JavaScript εφαρμογή η αναμενόμενη αποκομιδή των στοιχείων και εκκαθάριση μνήμης.
 
-Memory leaks in Vue applications do not typically come from Vue itself, rather they can happen when incorporating other libraries into an application.
+Οι διαρροές μνήμης στις Vue εφαρμογές δεν προέρχονται συνήθως από την ίδια την Vue, αλλά μπορούν να συμβούν όταν ενσωματώνονται άλλες βιβλιοθήκες σε μια εφαρμογή.
 
-## Simple Example
+## Απλό παράδειγμα
 
 The following example shows a memory leak caused by using the [Choices.js](https://github.com/jshjohnson/Choices) library in a Vue component and not properly cleaning it up. Later, we will show how to remove the Choices.js footprint and avoid the memory leak.
 
